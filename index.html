@@ -1,0 +1,38 @@
+<!DOCTYPE html> <!-- Avisa ao navegador: esta é uma página HTML moderna -->
+<html lang="pt-BR"> <!-- Abre a página e diz que ela é em português -->
+
+<head> <!-- Cabeça da página: o navegador lê, mas ninguém vê -->
+  <meta charset="UTF-8"> <!-- Faz as letras com acento aparecerem certinhas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Faz a página caber na tela do celular -->
+  <title>Consulta FIPE</title> <!-- Nome que aparece na abinha do navegador -->
+  <link rel="stylesheet" href="style.css"> <!-- Liga o arquivo de cores e estilos (a "roupa") -->
+</head> <!-- Fecha a cabeça -->
+
+<body> <!-- Corpo da página: tudo o que a pessoa enxerga -->
+  <main class="cartao"> <!-- Caixa principal onde fica tudo -->
+    <header class="faixa">BRASIL</header> <!-- Faixa azul de cima, igual à placa de carro -->
+    <div class="conteudo"> <!-- Caixinha que organiza e dá espaço -->
+      <h1>Consulta tabela FIPE</h1> <!-- Título grande da página -->
+      <div class="linha-marca"> <!-- Caixinha que põe botão e campo lado a lado -->
+        <button id="btnMarcas" type="button">Buscar Marcas</button> <!-- Botão 1: busca a lista de marcas na API -->
+        <input id="campoMarca" list="listaMarcas" placeholder="Digite a marca" disabled>
+        <!-- Campo da marca. "list" liga às sugestões -->
+        <datalist id="listaMarcas"></datalist> <!-- Lista de sugestões (o JS enche com as marcas) -->
+      </div> <!-- Fecha a caixinha do botão e do campo -->
+      <select id="selectModelo" disabled> <!-- Caixinha de escolher o modelo (começa travada) -->
+        <option value="">Selecione um modelo</option> <!-- Primeira opção, só um lembrete -->
+      </select> <!-- Fecha a caixinha de modelo -->
+      <select id="selectAno" disabled> <!-- Caixinha de escolher o ano (começa travada) -->
+        <option value="">Selecione o ano</option> <!-- Primeira opção, só um lembrete -->
+      </select> <!-- Fecha a caixinha de ano -->
+      <button id="btnConsultar" type="button" disabled>Consultar preço</button>
+      <!-- Botão 2: mostra o preço (começa travado) -->
+      <p id="carregando" role="status" hidden>⏳ Carregando...</p> <!-- Ampulheta de espera (começa escondida) -->
+      <p id="mensagem" hidden></p> <!-- Lugar dos avisos e erros (começa escondido) -->
+      <section id="resultado" hidden></section> <!-- Lugar onde o JS mostra o preço (começa escondido) -->
+    </div> <!-- Fecha a caixinha de espaço -->
+  </main> <!-- Fecha a caixa principal -->
+  <script src="script.js"></script> <!-- Liga o arquivo de "ações" (o cérebro da página) -->
+</body> <!-- Fecha o corpo -->
+
+</html> <!-- Fecha a página -->

@@ -1,0 +1,217 @@
+* {
+  box-sizing: border-box;
+}
+
+/* Faz o tamanho das caixas ser fácil de calcular */
+[hidden] {
+  display: none !important;
+}
+
+/* Tudo que tem "hidden" fica escondido de verdade */
+
+body {
+  /* Estilo da página inteira */
+  margin: 0;
+  /* Tira a margem que o navegador coloca sozinho */
+  min-height: 100vh;
+  /* Altura mínima = altura inteira da tela */
+  display: grid;
+  /* Usa grade para posicionar o cartão */
+  place-items: center;
+  /* Coloca o cartão bem no meio da tela */
+  background: #eef1f5;
+  /* Cor de fundo: cinza bem clarinho */
+  color: #1c2333;
+  /* Cor das letras: quase preto */
+  font-family: system-ui, sans-serif;
+  /* Tipo de letra que já existe no computador */
+}
+
+/* Fecha o estilo do body */
+
+.cartao {
+  /* Estilo da caixa principal */
+  width: min(92vw, 460px);
+  /* Largura: 92% da tela, mas no máximo 460px */
+  background: #fff;
+  /* Fundo branco, como uma placa */
+  border: 3px solid #1c2333;
+  /* Borda escura de 3px em volta */
+  border-radius: 14px;
+  /* Cantos arredondados */
+  overflow: hidden;
+  /* Corta o que passar dos cantos redondos */
+}
+
+/* Fecha o estilo do cartão */
+
+.faixa {
+  /* Estilo da faixa azul de cima */
+  background: #1b3a8a;
+  /* Cor azul da placa Mercosul */
+  color: #fff;
+  /* Letras brancas */
+  text-align: center;
+  /* Texto no meio */
+  letter-spacing: 0.3em;
+  /* Espaço entre as letras */
+  font-size: 0.8rem;
+  /* Letra pequenininha */
+  padding: 6px;
+  /* Espaço dentro da faixa */
+}
+
+/* Fecha o estilo da faixa */
+
+.conteudo {
+  /* Estilo da caixinha que organiza tudo */
+  display: grid;
+  /* Empilha os itens um embaixo do outro */
+  gap: 12px;
+  /* Espaço de 12px entre os itens */
+  padding: 20px 24px 28px;
+  /* Espaço dentro do cartão */
+}
+
+/* Fecha o estilo do conteúdo */
+
+h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+/* Título: sem margem e com letra média */
+h2 {
+  margin: 0 0 4px;
+  font-size: 1.15rem;
+}
+
+/* Nome do carro: letra um pouco menor */
+
+.linha-marca {
+  display: flex;
+  gap: 8px;
+}
+
+/* Botão e campo da marca ficam lado a lado */
+
+input,
+select {
+  /* Estilo do campo e das caixinhas de escolha */
+  width: 100%;
+  /* Largura total */
+  padding: 10px;
+  /* Espaço dentro */
+  border: 2px solid #1c2333;
+  /* Borda escura */
+  border-radius: 8px;
+  /* Cantos arredondados */
+  background: #fff;
+  /* Fundo branco */
+  color: #1c2333;
+  /* Letra escura */
+  font: 1rem system-ui, sans-serif;
+  /* Tamanho e tipo de letra */
+}
+
+/* Fecha o estilo de campo e caixinhas */
+
+.linha-marca input {
+  width: auto;
+  flex: 1;
+  min-width: 0;
+}
+
+/* O campo da marca ocupa o espaço que sobrar */
+input:disabled,
+select:disabled {
+  background: #e6e9ee;
+  color: #5b6475;
+}
+
+/* Travado: fundo cinza para mostrar que não dá para usar */
+
+button {
+  /* Estilo dos botões */
+  padding: 12px;
+  /* Espaço dentro do botão */
+  border: 0;
+  /* Sem borda */
+  border-radius: 8px;
+  /* Cantos arredondados */
+  background: #f5c400;
+  /* Amarelo */
+  color: #1c2333;
+  /* Letra escura (dá para ler bem) */
+  font: 700 1rem system-ui, sans-serif;
+  /* Letra grossa */
+  cursor: pointer;
+  /* A setinha vira a mãozinha */
+}
+
+/* Fecha o estilo do botão */
+
+#btnMarcas {
+  white-space: nowrap;
+}
+
+/* O texto "Buscar Marcas" não quebra em duas linhas */
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Botão travado: fica apagadinho */
+:focus-visible {
+  outline: 3px solid #1b3a8a;
+}
+
+/* Contorno azul ao navegar com o teclado */
+
+#carregando {
+  margin: 0;
+  font-weight: 600;
+}
+
+/* Ampulheta de espera em negrito */
+#mensagem {
+  margin: 0;
+  color: #b3261e;
+  font-weight: 600;
+}
+
+/* Mensagem de erro em vermelho */
+
+.preco-grande {
+  /* Estilo do preço (a estrela da página) */
+  margin: 0 0 8px;
+  /* Espaço só embaixo */
+  color: #1b3a8a;
+  /* Azul */
+  font-size: 2rem;
+  /* Letra bem grande */
+  font-weight: 700;
+  /* Letra grossa */
+}
+
+/* Fecha o estilo do preço */
+
+.linha {
+  /* Estilo de cada linha de detalhe */
+  display: flex;
+  /* Coloca o nome e o valor lado a lado */
+  justify-content: space-between;
+  /* Um na esquerda, outro na direita */
+  padding: 8px 0;
+  /* Espaço em cima e embaixo */
+  border-bottom: 1px dashed #b8c0cc;
+  /* Tracejado separando as linhas */
+}
+
+/* Fecha o estilo da linha */
+
+.dado {
+  font-weight: 700;
+}
+
+/* Valor da linha em negrito */
